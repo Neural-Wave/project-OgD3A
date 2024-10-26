@@ -5,64 +5,92 @@ from causalnex.structure.notears import from_pandas
 from causalnex.structure.notears import from_pandas_lasso
 #from causalnex.structure.structuremodel import StructureModel
 import networkx as nx
+import pickle
 import matplotlib.pyplot as plt
 
 # Load the datasets
 high = pd.read_csv("/teamspace/studios/this_studio/dataset/high_scrap.csv")
 low = pd.read_csv("/teamspace/studios/this_studio/dataset/low_scrap.csv")
 
-print("High Scrap Data")
-#print(high.head())
-print("Low Scrap Data")
-#print(low.head())
-
 # Normalize the data
 low = (low - low.mean()) / low.std()
 high = (high - high.mean()) / high.std()
 print("Data Normalized")
 
-# Use 'low' dataset for causal discovery
-# data = low
-
-# Add a column to differentiate between the two datasets
-high['high'] = 1.0
-low['high'] = 0.0
 # concat the two datasets
 data = pd.concat([low, high], axis=0)
 print("Data Concatenated")
 
-print("Data ", data.head())
+# print("Data ", data.head())
 
 print(data.describe())
 
 # Define tabu edges based on the station sequence rule
 tabu_edges = []
-measurements = data.columns.drop('high') if 'high' in data.columns else data.columns
-for i, measurement in enumerate(measurements):
+measurements = data.columns
+
+# Extract station numbers from the column names
+station_numbers = [int(col.split('_')[0][7:]) for col in measurements]
+
+for i, measurement_i in enumerate(measurements):
+    station_i = station_numbers[i]
     for j in range(i + 1, len(measurements)):
-        if int(measurement.split('_')[0][7:]) != int(measurements[j].split('_')[0][7:]):
-            tabu_edges.append((measurements[j], measurement))
+        measurement_j = measurements[j]
+        station_j = station_numbers[j]
+        if station_j < station_i:
+            # Prevent edges from later stations to earlier stations
+            tabu_edges.append((measurement_j, measurement_i))
+
 print("Tabu Edges Added")
 
-# Build a causal graph using the `NOTEARS` algorithm with the tabu edges
-sm = from_pandas_lasso(data, 0.1, max_iter=1000, w_threshold=0.0, tabu_edges=tabu_edges)
-#sm = from_pandas(data, max_iter=1000, w_threshold=0.0, tabu_edges=tabu_edges)
+# Build a causal graph using the NOTEARS algorithm with the tabu edges
+sm = from_pandas_lasso(
+    data,
+    beta=0.01,
+    max_iter=100,
+    w_threshold=0.015,
+    tabu_edges=tabu_edges
+)
 print("Causal Graph Built")
+
+# Save the causal model to a pickle file
+with open("/teamspace/studios/this_studio/causal_model.pkl", "wb") as f:
+    pickle.dump(sm, f)
+print("Causal Model Saved as Pickle")
 
 # # Remove weaker edges for a cleaner graph
 # sm.remove_edges_below_threshold(0.02)
 # print("Weak Edges Removed")
 
-graph = nx.DiGraph([(int(measurement1.split('_')[0][7:]), int(measurement2.split('_')[0][7:])) for (measurement1, measurement2) in sm.edges()])
+graph = nx.DiGraph([(int(measurement1.split('_')[2]), int(measurement2.split('_')[2])) for (measurement1, measurement2) in sm.edges()])
 
 # Get the adjacency matrix of the causal graph
 adj_matrix = nx.adjacency_matrix(graph).todense()
-np.save("/teamspace/studios/this_studio/oli/adjacency_matrix.npy", adj_matrix)
-np.savetxt("/teamspace/studios/this_studio/oli/adjacency_matrix.txt", adj_matrix)
-print(f"Adjacency Matrix: \n{adj_matrix}")
+
+# Ensure the adjacency matrix has at least 98 rows and columns
+min_size = 98
+current_size = adj_matrix.shape[0]
+if current_size < min_size:
+    # Create a larger matrix filled with zeros
+    larger_matrix = np.zeros((min_size, min_size), dtype=int)
+    # Copy the existing adjacency matrix into the larger matrix
+    larger_matrix[:current_size, :current_size] = adj_matrix
+    adj_matrix = larger_matrix
+adj_matrix_int = adj_matrix.astype(int)
+np.save("/teamspace/studios/this_studio/oli/adjacency_matrix.npy", adj_matrix_int)
+np.savetxt("/teamspace/studios/this_studio/oli/adjacency_matrix.txt", adj_matrix_int)
+print(f"Adjacency Matrix: \n{adj_matrix_int}")
+
+print("Number of edges: ", adj_matrix.sum())
+
+head15 = np.loadtxt("/teamspace/studios/this_studio/head15.txt")
+
+num_diff = np.sum(np.abs(head15 - adj_matrix_int[:15,:]))
+
+print("Difference: ", num_diff)
 
 # Define the target variable
-target_node = '85'
+target_node = 85
 
 # Recursively get all nodes with a path to the target node using a reverse DFS
 def get_all_ancestors(graph, target):
@@ -78,14 +106,12 @@ def get_all_ancestors(graph, target):
     return ancestors
 
 # Get all ancestors of the target node
-ancestor_nodes = get_all_ancestors(sm, target_node)
+ancestor_nodes = get_all_ancestors(graph, target_node)
 # Include the target node itself
 ancestor_nodes.add(target_node)
 
 # Create a subgraph with the target node, its ancestors, and the edges between them
 subgraph = graph.subgraph(ancestor_nodes).copy()  # Copy to ensure subgraph is editable
-print("Subgraph Nodes:", subgraph.nodes())
-print("Subgraph Edges:", subgraph.edges())
 
 # Plot the subgraph with directed edges
 plt.figure(figsize=(10, 6))
