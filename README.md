@@ -1,4 +1,5 @@
 # Bosh Project - Team og D3A
+Team members: Christian Berchtold, Nathan Margni, Oliver Tryding
 
 ## Overview
 A manufacturing plant experiences a sudden decline in product quality, resulting in increased scrap rates. Factory workers request an analysis to identify the root causes of this change. Two datasets are provided: one containing measurements of 2500 parts taken before the quality decline, and another taken after the decline.
