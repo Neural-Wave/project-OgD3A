@@ -13,7 +13,7 @@ influence
 
 ## Structure
 - `src/`: Source code for the project.
-- `docs/`: Documentation and reports.
+- `docs/`: Documents and the final report.
 - `misc/`: Miscellaneous files.
 - `dataset/`: Data folder
 
