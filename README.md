@@ -17,6 +17,8 @@ influence
 - `misc/`: Miscellaneous files.
 - `dataset/`: Data folder
 
+## Solution found (video link to loom)
+https://www.loom.com/share/2d51337bf0a64bcab2ff7759fe9bcb00sid=a23df8d7-90b5-45aa-a68d-8217274b885d
 
 ## License
 This project is licensed under the MIT License - see the `LICENSE.md` file for details.
