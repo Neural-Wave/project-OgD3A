@@ -3,7 +3,7 @@ import numpy as np
 from utils import get_index
 
 def process_adjacency():
-    with open('ground_truth.json', 'r') as file:
+    with open('misc/ground_truth.json', 'r') as file:
         data = json.load(file)
 
     adjacency_matrix = np.zeros((98,98))
@@ -16,7 +16,7 @@ def process_adjacency():
             id = var.get('id')
             adjacency_matrix[i][get_index(id)] = 1
 
-    np.save('adjacency_matrix.npy', adjacency_matrix)
+    np.save('misc/adjacency_matrix.npy', adjacency_matrix)
 
     return adjacency_matrix
 

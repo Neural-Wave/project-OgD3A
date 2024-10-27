@@ -113,10 +113,10 @@ for var in ancestors:
 sorted_influences = sorted(influences.items(), key=lambda item: item[1], reverse=True)
 
 # Save the sorted influences to a text file
-with open("sorted_influences.txt", "w") as file:
+with open("misc/BN_sorted_influences.txt", "w") as file:
     for var, influence in sorted_influences:
         file.write(f"{var}: {influence}\n")
-print("Sorted influences saved to 'sorted_influences.txt'.")
+print("Sorted influences saved to 'misc/BN_sorted_influences.txt'.")
 
 print("\nRoot causes ranked by influence on the target variable:")
 for var, influence in sorted_influences:
@@ -171,7 +171,7 @@ except Exception as e:
     print(e)
 
 # Save the graph
-plt.savefig("bayesian_network.png")
+plt.savefig("figures/bayesian_network.png")
 print("Graph saved as 'bayesian_network.png'.")
 
 plt.show()
@@ -190,8 +190,10 @@ print(adj_df)
 print("Number of edges:", adj_matrix.sum())
 
 # Save the adjacency matrix to a CSV file
-adj_df.to_csv("adjacency_matrix.csv")
-print("Adjacency matrix saved to 'adjacency_matrix.csv'.")
+adj_df.to_csv("misc/BN_adjacency_matrix.csv")
+
+np.savetxt("misc/BN_adjacency_matrix.txt", adj_df.values)
+print("Adjacency matrix saved to 'misc/BN_adjacency_matrix.csv'.")
 
 # Get distance between the learned adjacency matrix and the ground truth
 from utils import get_distance, adj_padder

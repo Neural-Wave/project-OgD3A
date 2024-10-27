@@ -54,7 +54,7 @@ sm = from_pandas_lasso(
 print("Causal Graph Built")
 
 # Save the causal model to a pickle file
-with open("/teamspace/studios/this_studio/causal_model.pkl", "wb") as f:
+with open("misc/causal_model.pkl", "wb") as f:
     pickle.dump(sm, f)
 print("Causal Model Saved as Pickle")
 
@@ -77,8 +77,8 @@ if current_size < min_size:
     larger_matrix[:current_size, :current_size] = adj_matrix
     adj_matrix = larger_matrix
 adj_matrix_int = adj_matrix.astype(int)
-np.save("/teamspace/studios/this_studio/oli/adjacency_matrix.npy", adj_matrix_int)
-np.savetxt("/teamspace/studios/this_studio/oli/adjacency_matrix.txt", adj_matrix_int)
+np.save("/teamspace/studios/this_studio/misc/oli/adjacency_matrix.npy", adj_matrix_int)
+np.savetxt("/teamspace/studios/this_studio/misc/oli/adjacency_matrix.txt", adj_matrix_int)
 print(f"Adjacency Matrix: \n{adj_matrix_int}")
 
 print("Number of edges: ", adj_matrix.sum())
@@ -122,7 +122,7 @@ nx.draw_networkx_edges(subgraph, pos, arrowstyle='->', arrows=True, connectionst
 print("Directed edges plotted")
 
 # Save the directed subgraph as a PDF
-plt.savefig("/teamspace/studios/this_studio/causal_graph.pdf", format="pdf")
+plt.savefig("/teamspace/studios/this_studio/docs/causal_graph.pdf", format="pdf")
 print("Causal Graph Saved as PDF")
 
 # Show the plot

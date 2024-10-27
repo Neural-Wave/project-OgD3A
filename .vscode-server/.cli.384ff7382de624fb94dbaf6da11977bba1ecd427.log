@@ -1,5 +1,5 @@
-Listening on 127.0.0.1:50163
-[2024-10-27 08:52:52] info Disposed of connection to running server.
-looking for token 10ec6b43-e392-4578-b9df-436bf46421d5, got Some("10ec6b43-e392-4578-b9df-436bf46421d5")
-[2024-10-27 08:52:53] info Checking /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/log.txt and /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/pid.txt for a running server...
-[2024-10-27 08:52:53] info Found running server (pid=19967)
+Listening on 127.0.0.1:50045
+[2024-10-27 09:04:29] info Disposed of connection to running server.
+looking for token 41d3ee6d-8d9d-45ac-a2b6-9c9df845381b, got Some("41d3ee6d-8d9d-45ac-a2b6-9c9df845381b")
+[2024-10-27 09:04:30] info Checking /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/log.txt and /teamspace/studios/this_studio/.vscode-server/cli/servers/Stable-384ff7382de624fb94dbaf6da11977bba1ecd427/pid.txt for a running server...
+[2024-10-27 09:04:30] info Found running server (pid=19967)

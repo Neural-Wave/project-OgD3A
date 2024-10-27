@@ -49,7 +49,7 @@ nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=10, edge_color='gray')
 print("Directed edges plotted")
 
 # Save the graph as a PDF
-plt.savefig("/teamspace/studios/this_studio/pc_causal_graph.pdf", format="pdf")
+plt.savefig("/teamspace/studios/this_studio/docus/pc_causal_graph.pdf", format="pdf")
 print("Causal Graph Saved as PDF")
 
 # Show the plot

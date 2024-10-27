@@ -5,7 +5,7 @@ def get_index(var_name):
     return int(var_name.split('_')[2])
 
 def get_distance(A):
-    ground_truth = np.load('adjacency_matrix.npy')
+    ground_truth = np.load('misc/adjacency_matrix.npy')
     return np.sum(np.abs(A - ground_truth))
 
 def adj_padder(A, min_size=98):
