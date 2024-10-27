@@ -1,0 +1,10 @@
+pgmpy
+numpy
+scipy
+scikit-learn
+pandas
+networkx
+matplotlib
+causalnex
+gcastle
+causal-learn
