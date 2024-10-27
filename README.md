@@ -13,7 +13,7 @@ influence
 
 ## Structure
 - `src/`: Source code for the project.
-- `docs/`: Documents and the final report.
+- `docs/`: Documents and the final report ([text](docs/NeuralWave_Bosch.pdf)).
 - `misc/`: Miscellaneous files.
 - `dataset/`: Data folder
 
