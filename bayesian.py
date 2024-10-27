@@ -73,6 +73,15 @@ def get_ancestors(graph, target):
             ancestors.update(get_ancestors(graph, predecessor))
     return ancestors
 
+
+# Print the CPDs for all nodes
+for cpd in model_discrete.get_cpds():
+    print(f"CPD of {cpd.variable}:")
+    print(cpd)
+    print("\n")
+    
+    
+
 target_variable = 'Station5_mp_85'
 ancestors = get_ancestors(model_discrete, target_variable)
 
@@ -126,20 +135,17 @@ G.remove_edges_from(nx.selfloop_edges(G))
 print("Self-loops removed.")
 
 # Create a subgraph with the target node, its ancestors, and the edges between them
+ancestors.add(target_variable)
 subgraph = G.subgraph(ancestors).copy()  # Copy to ensure subgraph is editable
+subgraph_nodes = list(subgraph.nodes())
 
 # Visualize the Bayesian Network
-pos = nx.spring_layout(G)
+pos = nx.spring_layout(subgraph)
 print("Positions computed for nodes.")
-plt.figure(figsize=(15, 10))
-
-# Verify nodes and positions
-nodes = list(G.nodes())
-print("Number of nodes:", len(nodes))
 
 # Generate node colors
 node_colors = []
-for node in nodes:
+for node in subgraph_nodes:
     if node == target_variable:
         node_colors.append('red')
     elif node in [var for var, _ in sorted_influences[:5]]:
@@ -155,7 +161,10 @@ print("Number of node colors:", len(node_colors))
 # Plot the graph
 plt.figure(figsize=(15, 10))
 try:
-    nx.draw_networkx(G, pos, with_labels=True, node_size=300, node_color=node_colors, arrows=True, arrowsize=20)
+    # nx.draw_networkx(subgraph, pos, with_labels=True, node_size=300, node_color=node_colors, arrows=True, arrowsize=20)
+    nx.draw_networkx_nodes(subgraph, pos, node_size=300, node_color=node_colors)
+    nx.draw_networkx_labels(subgraph, pos, font_size=10, font_weight='bold')
+    nx.draw_networkx_edges(subgraph, pos, arrowstyle='->', arrows=True, connectionstyle="arc3,rad=0.2")
     print("Bayesian Network with root causes highlighted.")
 except Exception as e:
     print("Error during drawing:")
@@ -184,3 +193,8 @@ print("Number of edges:", adj_matrix.sum())
 adj_df.to_csv("adjacency_matrix.csv")
 print("Adjacency matrix saved to 'adjacency_matrix.csv'.")
 
+# Get distance between the learned adjacency matrix and the ground truth
+from utils import get_distance, adj_padder
+adj_matrix = adj_padder(adj_matrix)
+distance = get_distance(adj_matrix)
+print("Distance from ground truth:", distance)

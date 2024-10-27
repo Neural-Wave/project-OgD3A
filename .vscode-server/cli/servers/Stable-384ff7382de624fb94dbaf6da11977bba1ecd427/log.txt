@@ -5,113 +5,17 @@
 * the Visual Studio Code Server License Terms (https://aka.ms/vscode-server-license) and
 * the Microsoft Privacy Statement (https://privacy.microsoft.com/en-US/privacystatement).
 *
-Server bound to /tmp/code-dd3c71e9-4f5b-4632-a78c-ea0bcaa4f38c
-Extension host agent listening on /tmp/code-dd3c71e9-4f5b-4632-a78c-ea0bcaa4f38c
+Server bound to /tmp/code-0d045006-6f25-44d8-8fcb-53ced154f964
+Extension host agent listening on /tmp/code-0d045006-6f25-44d8-8fcb-53ced154f964
 
-[11:41:37] 
-
-
+[08:09:58] 
 
 
-[11:41:37] Extension host agent started.
-[11:41:38] [<unknown>][c908ac02][ManagementConnection] New connection established.
-[11:41:38] [<unknown>][5147e171][ExtensionHostConnection] New connection established.
-[11:41:38] [<unknown>][5147e171][ExtensionHostConnection] <9307> Launched Extension Host Process.
-[11:44:45] [<unknown>][9cc30c4c][ExtensionHostConnection] New connection established.
-[11:44:45] [<unknown>][e3545fad][ManagementConnection] New connection established.
-[11:44:45] [<unknown>][9cc30c4c][ExtensionHostConnection] <21521> Launched Extension Host Process.
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 53
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 54
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 55
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 56
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 57
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 58
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 59
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 60
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 61
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 62
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 63
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 64
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 65
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 66
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 67
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 68
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 69
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 70
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 71
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 72
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 73
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 74
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 75
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 76
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 77
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 78
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 79
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 80
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 81
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 82
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 83
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 84
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 85
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 86
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 87
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 88
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 89
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 90
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 91
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 92
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 93
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 94
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 95
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 96
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 97
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 98
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 99
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 100
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 101
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 102
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 103
-[11:44:48] RequestStore#acceptReply was called without receiving a matching request 104
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 105
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 106
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 107
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 108
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 109
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 110
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 111
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 112
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 113
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 114
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 115
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 116
-[11:44:49] RequestStore#acceptReply was called without receiving a matching request 117
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 118
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 119
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 120
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 121
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 122
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 123
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 124
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 125
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 126
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 127
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 128
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 129
-[11:44:53] RequestStore#acceptReply was called without receiving a matching request 130
-New EH opened, aborting shutdown
-[11:46:37] New EH opened, aborting shutdown
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 131
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 132
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 133
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 134
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 135
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 136
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 137
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 138
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 139
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 140
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 141
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 142
-[11:48:46] RequestStore#acceptReply was called without receiving a matching request 143
-[12:04:30] [<unknown>][c908ac02][ManagementConnection] The client has reconnected.
-[12:05:02] [<unknown>][5147e171][ExtensionHostConnection] The client has reconnected.
+
+
+[08:09:58] Extension host agent started.
+[08:09:58] [<unknown>][49fef22e][ManagementConnection] New connection established.
+[08:09:58] [<unknown>][98e33e14][ExtensionHostConnection] New connection established.
+[08:09:59] [<unknown>][98e33e14][ExtensionHostConnection] <20128> Launched Extension Host Process.
+[08:12:09] [<unknown>][49fef22e][ManagementConnection] The client has reconnected.
+[08:12:40] [<unknown>][98e33e14][ExtensionHostConnection] The client has reconnected.

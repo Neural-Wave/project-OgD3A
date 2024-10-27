@@ -43,7 +43,7 @@ print("Edges: ", G.edges())
 # Plot the graph with directed edges
 plt.figure(figsize=(12, 8))
 pos = nx.spring_layout(G, k=0.5, iterations=50)
-nx.draw_networkx_nodes(G, pos, node_size=500, node_color='lightblue')
+nx.draw_networkx_nodes(G, pos, node_size=300, node_color='lightblue')
 nx.draw_networkx_labels(G, pos, font_size=8, font_weight='bold')
 nx.draw_networkx_edges(G, pos, arrowstyle='->', arrowsize=10, edge_color='gray')
 print("Directed edges plotted")

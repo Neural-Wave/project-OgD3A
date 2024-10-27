@@ -46,9 +46,9 @@ print("Tabu Edges Added")
 # Build a causal graph using the NOTEARS algorithm with the tabu edges
 sm = from_pandas_lasso(
     data,
-    beta=0.01,
+    beta=0.008,
     max_iter=100,
-    w_threshold=0.015,
+    w_threshold=0.03,
     tabu_edges=tabu_edges
 )
 print("Causal Graph Built")
@@ -83,11 +83,11 @@ print(f"Adjacency Matrix: \n{adj_matrix_int}")
 
 print("Number of edges: ", adj_matrix.sum())
 
-head15 = np.loadtxt("/teamspace/studios/this_studio/head15.txt")
-
-num_diff = np.sum(np.abs(head15 - adj_matrix_int[:15,:]))
-
-print("Difference: ", num_diff)
+# Get distance between the learned adjacency matrix and the ground truth
+from utils import get_distance, adj_padder
+adj_matrix = adj_padder(adj_matrix)
+distance = get_distance(adj_matrix)
+print("Distance from ground truth:", distance)
 
 # Define the target variable
 target_node = 85
