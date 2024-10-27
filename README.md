@@ -7,7 +7,7 @@ A manufacturing plant experiences a sudden decline in product quality, resulting
 - A methodology to determine a graph containing the causal
 relationships between the physical quantities measured at the stations
 - A way to detect the root causes of the observed change in
-Station5_mp_85 and rank them according to their influence
+`Station5_mp_85` and rank them according to their influence
 - A visualization of the graph, the detected root causes and their
 influence
 
